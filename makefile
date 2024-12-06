@@ -1,8 +1,8 @@
 # Please implement your Makefile rules and targets below.
 # Customize this file to define how to build your project.
-all: clean compile link c
+all: clean  link 
 
-link: 
+link: compile
 	g++ -o bin/simulation bin/main.o bin/Simulation.o bin/Action.o bin/Plan.o bin/SelectionPolicy.o bin/Facility.o bin/Settlement.o bin/Auxiliary.o
 
 compile: src/Auxiliary.cpp src/Settlement.cpp src/Facility.cpp src/SelectionPolicy.cpp src/Plan.cpp src/Action.cpp src/Simulation.cpp src/main.cpp

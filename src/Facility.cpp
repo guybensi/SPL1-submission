@@ -43,7 +43,10 @@ Facility::Facility(const string &name, const string &settlementName, const Facil
 Facility ::Facility(const FacilityType &type, const string &settlementName):
 FacilityType(type), settlementName(settlementName), status(FacilityStatus::UNDER_CONSTRUCTIONS), timeLeft(price){}
 //Copy Constructor
-Facility ::Facility(const Facility &other): Facility(other.name, other.getSettlementName(), other.category, other.price, other.lifeQuality_score, other.economy_score, other.environment_score){}//copy constractor
+Facility ::Facility(const Facility &other): Facility(other.name, other.getSettlementName(), other.category, other.price, other.lifeQuality_score, other.economy_score, other.environment_score){//copy constractor
+    status = other.status;
+    timeLeft = other.timeLeft;
+}
 //Copy Assignment operator
 Facility& Facility ::operator=(const Facility &other){return *this;}//copy assignment operator
 

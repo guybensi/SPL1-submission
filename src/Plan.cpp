@@ -32,6 +32,14 @@ Plan::Plan(const Settlement &settlement, const Plan &other):Plan(other.plan_id, 
     life_quality_score = other.getlifeQualityScore();
     economy_score = other.getEconomyScore();
     environment_score = other.getEnvironmentScore();
+    for (Facility* facility : other.facilities) {
+        addFacility(new Facility(*facility)); 
+    }
+
+    // Deep copy of underConstruction
+    for (Facility* facility : other.underConstruction) {
+        addFacility(new Facility(*facility)); 
+    }
 }
 
 // Copy Assignment Operator
